@@ -4,7 +4,14 @@
 #define max(A,B) (A>B)?A:B
 #define min(A,B) (A>B)?B:A
 
+int i;
+int c;
+
 int isprime(int n) {
+  if (n==1)
+    return 0;
+  if (n==2 || n==3)
+    return 1;
   int i = 2;
   while(i*i<=n){
     if (!(n%i)) return 0;
