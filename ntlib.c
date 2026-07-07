@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include "ntlib.h"
+#include "datastruct.h"
+#include "datastruct.c"
 
 #define max(A,B) (A>B)?A:B
 #define min(A,B) (A>B)?B:A
-
-int i;
-int c;
 
 int isprime(int n) {
   if (n==1)
@@ -46,4 +45,17 @@ int LinDioEq(int a, int b, int c, int *sol) {
     return 0;
   }
   else return 1;
+}
+
+int factor(int n, freqmap *fqm_ptr) {
+  int i = 2;
+  while (i*i<=n){
+    if (!(n%i)) {
+      push(fqm_ptr, i);
+      return factor(n/i, fqm_ptr);
+    }
+    i++;
+  }
+  push(fqm_ptr, n);
+  return 0;
 }
