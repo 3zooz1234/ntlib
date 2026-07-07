@@ -1,4 +1,4 @@
-#include <stdio.h>
+//#include <stdio.h>
 #include "ntlib.h"
 #include "datastruct.h"
 #include "datastruct.c"
@@ -9,8 +9,6 @@
 int isprime(int n) {
   if (n==1)
     return 0;
-  if (n==2 || n==3)
-    return 1;
   int i = 2;
   while(i*i<=n){
     if (!(n%i)) return 0;
@@ -48,6 +46,7 @@ int LinDioEq(int a, int b, int c, int *sol) {
 }
 
 int factor(int n, freqmap *fqm_ptr) {
+  if (n == 1) return 1;
   int i = 2;
   while (i*i<=n){
     if (!(n%i)) {
