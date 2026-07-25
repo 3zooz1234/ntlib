@@ -35,6 +35,15 @@ int gcd(int a, int b) {
   return mn;
 }
 
+int largest_factor(int n){
+  int i = 2;
+  while (i*i<=n) {
+    if (!(n%i)) return n/i;
+    i++;
+  }
+  return n;
+}
+
 int LinDioEq(int a, int b, int c, int *sol) {
   if (a==0 || b==0)
     return -1;
