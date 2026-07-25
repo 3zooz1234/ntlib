@@ -17,11 +17,22 @@ int isprime(int n) {
   return 1;
 }
 
+int pow(int base, int exp){
+  int i = exp;
+  int num = base;
+  while (i-1) {
+    if (i%2) num = num*num*base;
+    else num = num*num;
+    i/=2;
+  }
+  return num;
+}
+
 int gcd(int a, int b) {
   int mx = max(a,b);
   int mn = min(a,b);
-  if (!(mx%mn)) return mn;
-  else return gcd(mn,mx%mn);
+  if (mx%mn) return gcd(mn,mx%mn);
+  return mn;
 }
 
 int LinDioEq(int a, int b, int c, int *sol) {
