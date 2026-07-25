@@ -44,6 +44,8 @@ int largest_factor(int n){
   return n;
 }
 
+
+
 int LinDioEq(int a, int b, int c, int *sol) {
   if (a==0 || b==0)
     return -1;
@@ -65,13 +67,6 @@ int LinDioEq(int a, int b, int c, int *sol) {
   else return 1;
 }
 
-int num_to_factor(freqmap fqm) {
-  int num = 1;
-  for (int i = 0; i<fqm.curr_size; i++)
-    num*=pow(fqm.value[i], fqm.count[i]);
-  return num;
-}
-
 int factor(int n, freqmap *fqm_ptr) {
   if (n == 1) return 1;
   int i = 2;
@@ -84,4 +79,11 @@ int factor(int n, freqmap *fqm_ptr) {
   }
   push(fqm_ptr, n);
   return 0;
+}
+
+int factor2num(freqmap fqm) {
+  int num = 1;
+  for (int i = 0; i<fqm.curr_size; i++)
+    num*=pow(fqm.value[i], fqm.count[i]);
+  return num;
 }

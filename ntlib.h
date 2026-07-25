@@ -9,6 +9,6 @@ int LinDIoEq(int a, int b, int c, int *sol);
 int factor(int n, freqmap *fqm_ptr);
 int pow(int base, int exp);
 int largest_factor(int n);
-int num_to_factor(freqmap fqm);
+int factor2num(freqmap fqm);
 
 #endif
