@@ -1,4 +1,3 @@
-//#include <stdio.h>
 #include "ntlib.h"
 #include "datastruct.h"
 #include "datastruct.c"
@@ -17,9 +16,9 @@ int isprime(int n) {
   return 1;
 }
 
-int pow(int base, int exp){
+long long int pow(int base, int exp){
   int i = exp;
-  int num = base;
+  long long int num = base;
   while (i-1) {
     if (i%2) num = num*num*base;
     else num = num*num;
